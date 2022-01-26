@@ -1,113 +1,170 @@
-*{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	text-decoration: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-ol, ul{
-list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
-body{
-	min-width: 1440px;
-	font-family: Roboto, sans-serif;
-}
-
-header{
-	color: #fff;
-	background: #888;
+body {
+  font-family: Roboto, sans-serif;
+  min-width: 1000px;
 }
 
 .container {
-	max-width: 1440px;
-	margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0px 40px 0px 80px;
+}
+
+.header {
+  background: #888;
+  color: #fff;
 }
 
 .header__content {
-	width: 1320px;
-	margin: 0 40px 0 80px;
-	height: 140px;
-}
-
-.header__content::after{
-	content:'';
-	clear: both;
-	display: table;
+  height: 140px;
 }
 
 .header__logo {
-	width: 311px;
-	height: 100%;
-	float: left;
-	font-size: 48px;
-	font-weight: 700;
+  min-width: 311px;
+  height: 100%;
+  float: left;
+  font-size: 48px;
+  font-weight: 700;
 }
 
-.header__menu{
-	height: 100%;
-	padding-top: 55px;
-	float: right;
-	text-align: right;
-	font-size: 24px;
-	font-weight: 800;
+.header__menu {
+  height: 100%;
+  padding-top: 55px;
+  float: right;
+  text-align: right;
+  font-size: 24px;
+  font-weight: 800;
 }
 
-.logo__picture{
-	float: left;
-	padding-top: 37px;
+.logo__picture {
+  float: left;
+  padding-top: 37px;
 }
 
-.logo__picture img{
-	width: 83px;
-	height: 66px;
+.logo__picture img {
+  width: 83px;
+  height: 66px;
 }
 
-.logo__title{
-	float: right;
-	padding-top: 40px;
+.logo__title {
+  float: right;
+  padding-top: 40px;
 }
 
-.menu__list{
-	float: right;
+.menu__list {
+  float: right;
 }
 
-.menu__item{
-	float: left;
-	margin-right: 60px;
+.menu__item {
+  float: left;
+  margin-right: 60px;
 }
 
 .menu__item:last-child {
-margin-right: 0px;
+  margin-right: 0px;
 }
 
-.menu__item a{
-	color: #fff;
+.menu__item a {
+  color: #fff;
 }
 
-.menu__item--underline{
-	text-decoration: underline;
+.menu__item--underline {
+  text-decoration: underline;
 }
 
-.banner{
-	height: 45px;
-	color: #888888;
-	border-bottom: 1px solid #888888;
+.banner {
+  color: #888;
+  border-bottom: 1px solid #888;
+  background-color: #fff;
 }
 
-.banner__content{
-	width: 1012px;
-	height: 100%;
-	margin-left: 390px;
-	padding-top: 11px;
+.banner__content {
+  min-height: 45px;
 }
 
-.banner__start-shopping{
-	float: right;
-	width: 517px;
-	text-decoration: underline;
+.banner__content::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.banner__start-shopping a{
-	color: #888;
+.banner__sale {
+  float: left;
+  padding: 13px 8.5% 0 24%;
+}
+
+.banner__buy {
+  padding-top: 13px;
+  float: left;
+}
+
+.banner__buy a {
+  color: #888;
+  text-decoration: underline;
+}
+
+.banner__basket {
+  float: right;
+  height: 100%;
+}
+
+.basket__content {
+  float: right;
+  height: 100%;
+  outline: 1px solid #888;
+}
+
+.basket__title {
+  height: 100%;
+  float: left;
+  padding: 13px;
+  background-color: #888;
+  color: #fff;
+}
+
+.basket__counter {
+  float: right;
+  height: 100%;
+  min-width: 45px;
+  padding: 13px;
+  text-align: center;
+}
+
+.catalog__content {
+  padding: 10px;
+}
+
+.product__content {
+  text-align: center;
+  padding: 10px;
+}
+
+.catalog__product-item {
+  width: 25%;
+  float: left;
+}
+
+.product__picture img {
+  width: 170px;
+  height: 130px;
+}
+
+.product__button button {
+  height: 30px;
+  padding: 5px 10px;
+}
+
+.product__title {
+  padding: 5px;
 }
