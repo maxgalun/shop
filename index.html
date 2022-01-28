@@ -9,23 +9,18 @@
       href="https://fonts.googleapis.com/css?family=Roboto:400,700,800"
       rel="stylesheet"
     />
-	 <script>
-		function AddtoBasket(){
-		let count = document.querySelector('#basketСounter').innerHTML;
-		count++;
-		document.querySelector('#basketСounter').innerText=count;
-		}
-	 </script>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header__content">
           <div class="header__logo logo">
-            <div class="logo__picture">
-              <img src="/img/Combined-Shape.svg" alt="logo" />
-            </div>
-            <div class="logo__title">Магазин</div>
+				 <div class="logo__content">
+					 <div class="logo__picture">
+						<img src="/img/Combined-Shape.svg" alt="logo" />
+					 </div>
+					 <div class="logo__title">Магазин</div>
+				 </div>
           </div>
           <div class="header__menu menu">
             <nav class="menu__content">
@@ -49,81 +44,9 @@
             <div class="banner__buy">
               <a href="#">Начать покупки</a>
             </div>
-				<div class="banner__basket basket">
-					 <div class="basket__content">
-						 <div id="basketСounter" class="basket__counter">0</div>
-						<div class="basket__title">В корзине</div>
-					 </div>
-				</div>
           </div>
         </div>
       </sectiodn>
     </header>
-    <main class="main">
-		<section class="catalog">
-			<div class="container">
-				<div class="catalog__content">
-					<ul class="catalog__products-list">
-						<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/notebook.jpeg" alt="фото"></div>
-									<div class="product__title">Ноутбук</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-						<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/monitor.jpeg" alt="фото"></div>
-									<div class="product__title">Монитор</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-						<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/tablet.jpeg" alt="фото"></div>
-									<div class="product__title">Планшет</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-												<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/notebook.jpeg" alt="фото"></div>
-									<div class="product__title">Ноутбук</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-						<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/monitor.jpeg" alt="фото"></div>
-									<div class="product__title">Монитор</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-						<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/tablet.jpeg" alt="фото"></div>
-									<div class="product__title">Планшет</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-												<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/notebook.jpeg" alt="фото"></div>
-									<div class="product__title">Ноутбук</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-						<li class="catalog__product-item product">
-								<div class="product__content">
-									<div class="product__picture"><img src="/img/monitor.jpeg" alt="фото"></div>
-									<div class="product__title">Монитор</div>
-									<div class="product__button"><button onclick="AddtoBasket()">Добавить в корзину</button></div>
-								</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-    </main>
   </body>
 </html>

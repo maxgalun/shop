@@ -1,7 +1,10 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -11,8 +14,8 @@ ul {
 }
 
 body {
-  font-family: Roboto, sans-serif;
   min-width: 1000px;
+  font-family: Roboto, sans-serif;
 }
 
 .container {
@@ -22,8 +25,8 @@ body {
 }
 
 .header {
-  background: #888;
   color: #fff;
+  background: #888;
 }
 
 .header__content {
@@ -31,25 +34,19 @@ body {
 }
 
 .header__logo {
-  min-width: 311px;
-  height: 100%;
   float: left;
+  height: 100%;
   font-size: 48px;
   font-weight: 700;
 }
 
-.header__menu {
-  height: 100%;
-  padding-top: 55px;
-  float: right;
-  text-align: right;
-  font-size: 24px;
-  font-weight: 800;
+.logo__content {
+  padding-top: 37px;
 }
 
 .logo__picture {
   float: left;
-  padding-top: 37px;
+  margin-right: 41px;
 }
 
 .logo__picture img {
@@ -59,11 +56,13 @@ body {
 
 .logo__title {
   float: right;
-  padding-top: 40px;
 }
 
-.menu__list {
+.header__menu {
   float: right;
+  padding-top: 55px;
+  font-size: 24px;
+  font-weight: 800;
 }
 
 .menu__item {
@@ -84,87 +83,22 @@ body {
 }
 
 .banner {
-  color: #888;
   border-bottom: 1px solid #888;
+  color: #888;
   background-color: #fff;
 }
 
 .banner__content {
-  min-height: 45px;
-}
-
-.banner__content::after {
-  content: "";
-  clear: both;
-  display: table;
+  height: 45px;
+  padding-top: 13px;
 }
 
 .banner__sale {
   float: left;
-  padding: 13px 8.5% 0 24%;
-}
-
-.banner__buy {
-  padding-top: 13px;
-  float: left;
+  padding: 0 8.5% 0 24%;
 }
 
 .banner__buy a {
   color: #888;
   text-decoration: underline;
-}
-
-.banner__basket {
-  float: right;
-  height: 100%;
-}
-
-.basket__content {
-  float: right;
-  height: 100%;
-  outline: 1px solid #888;
-}
-
-.basket__title {
-  height: 100%;
-  float: left;
-  padding: 13px;
-  background-color: #888;
-  color: #fff;
-}
-
-.basket__counter {
-  float: right;
-  height: 100%;
-  min-width: 45px;
-  padding: 13px;
-  text-align: center;
-}
-
-.catalog__content {
-  padding: 10px;
-}
-
-.product__content {
-  text-align: center;
-  padding: 10px;
-}
-
-.catalog__product-item {
-  width: 25%;
-  float: left;
-}
-
-.product__picture img {
-  width: 170px;
-  height: 130px;
-}
-
-.product__button button {
-  height: 30px;
-  padding: 5px 10px;
-}
-
-.product__title {
-  padding: 5px;
 }
