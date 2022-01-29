@@ -14,7 +14,7 @@ ul {
 }
 
 body {
-  min-width: 1000px;
+  min-width: 1110px;
   font-family: Roboto, sans-serif;
 }
 
@@ -101,4 +101,109 @@ body {
 .banner__buy a {
   color: #888;
   text-decoration: underline;
+}
+
+.header__cart {
+  float: right;
+}
+.cart__content {
+  padding: 48px 0 0 64px;
+}
+
+.cart__icon {
+  position: relative;
+}
+
+.cart__icon img {
+  width: 48px;
+  height: 48px;
+}
+
+.cart__counter {
+  position: absolute;
+  top: 0;
+  right: -9px;
+  width: 32px;
+  height: 32px;
+  padding-top: 2px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  background-color: #f34141;
+}
+
+.catalog__content {
+  padding-top: 87px;
+}
+
+.catalog__list {
+}
+
+.catalog__list-item {
+  float: left;
+  width: 50%;
+  margin-bottom: 113px;
+}
+
+.book {
+  max-width: 387px;
+  height: 500px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.book--center {
+  margin: 0 auto;
+}
+
+.book__content {
+  height: 100%;
+  padding: 38px 56px 30px;
+  border: 1px solid #888;
+  border-radius: 30px;
+}
+
+.book__picture {
+  margin-bottom: 19px;
+}
+
+.book__picture img {
+  display: block;
+  min-width: 153px;
+  height: 258px;
+  margin: 0 auto;
+}
+
+.book__title {
+  height: 83px;
+  text-align: center;
+  color: #888;
+}
+
+.book__button {
+  display: none;
+}
+
+.button {
+  min-width: 276px;
+  height: 62px;
+  cursor: pointer;
+}
+
+.button__content {
+  height: 100%;
+  padding-top: 17px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: #888;
+}
+
+.button__title::after {
+  content: "В корзину";
+}
+
+.book--center:hover .book__button {
+  display: block;
 }
