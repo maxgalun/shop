@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  min-width: 1000px;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0px 40px 0px 80px;
+}
+
+.header {
+  color: #fff;
+  background: #888;
+}
+
+.header__content {
+  height: 140px;
+}
+
+.header__logo {
+  float: left;
+  height: 100%;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.logo__content {
+  padding-top: 37px;
+}
+
+.logo__picture {
+  float: left;
+  margin-right: 41px;
+}
+
+.logo__picture img {
+  width: 83px;
+  height: 66px;
+}
+
+.logo__title {
+  float: right;
+}
+
+.header__menu {
+  float: right;
+  padding-top: 55px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.menu__item {
+  float: left;
+  margin-right: 60px;
+}
+
+.menu__item:last-child {
+  margin-right: 0px;
+}
+
+.menu__item a {
+  color: #fff;
+}
+
+.menu__item--underline {
+  text-decoration: underline;
+}
+
+.banner {
+  border-bottom: 1px solid #888;
+  color: #888;
+  background-color: #fff;
+}
+
+.banner__content {
+  height: 45px;
+  padding-top: 13px;
+}
+
+.banner__sale {
+  float: left;
+  padding: 0 8.5% 0 24%;
+}
+
+.banner__buy a {
+  color: #888;
+  text-decoration: underline;
+}
