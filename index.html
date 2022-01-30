@@ -7,15 +7,11 @@
 	<link rel="stylesheet" href="common.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,800" rel="stylesheet" />
 	<script>
-
-
 	function AddToCart(){
 		let CartCounter = document.querySelector(".cart__counter").innerText;
 		CartCounter++;
 		document.querySelector(".cart__counter").innerText = CartCounter;
 	}
-
-
 	</script>
 </head>
 <body>
@@ -70,7 +66,7 @@
 			<div class="catalog__content">
 				<ul class="catalog__list">
 					<li class="catalog__list-item">
-						<div class="book book--center">
+						<div class="book book--aligh-center">
 							<div class="book__content">
 								<div class="book__picture"><img src="/img/Harry Potter.svg" alt="Гарри Поттер и философский камень">
 								</div>
@@ -84,12 +80,12 @@
 						</div>
 					</li>
 					<li class="catalog__list-item">
-						<div class="book book--center">
+						<div class="book book--aligh-center">
 							<div class="book__content">
 								<div class="book__picture"><img src="/img/A Man Called Ove.svg" alt="Вторая жизнь Уве">
 								</div>
 								<div class="book__title">Вторая жизнь Уве</div>
-								<div class="book__button button">
+								<div class="book__button button" onclick="AddToCart()">
 									<div class="button__content">
 										<div class="button__title"></div>
 									</div>
@@ -98,12 +94,12 @@
 						</div>
 					</li>
 					<li class="catalog__list-item">
-						<div class="book book--center">
+						<div class="book book--aligh-center">
 							<div class="book__content">
 								<div class="book__picture"><img src="/img/Flowers for Algernon.svg" alt="Цветы для Элджернона">
 								</div>
 								<div class="book__title">Цветы для Элджернона</div>
-								<div class="book__button button">
+								<div class="book__button button" onclick="AddToCart()">
 									<div class="button__content">
 										<div class="button__title"></div>
 									</div>
@@ -112,12 +108,12 @@
 						</div>
 					</li>
 					<li class="catalog__list-item">
-						<div class="book book--center">
+						<div class="book book--aligh-center">
 							<div class="book__content">
 								<div class="book__picture"><img src="/img/Pride and Prejudice.svg" alt="Гордость и предубеждение">
 								</div>
 								<div class="book__title">Гордость и предубеждение</div>
-								<div class="book__button button">
+								<div class="book__button button" onclick="AddToCart()">
 									<div class="button__content">
 										<div class="button__title"></div>
 									</div>
@@ -125,18 +121,7 @@
 							</div>
 						</div>
 					</li>
-
-
-
-
-
-
-
-
 				</ul>
-
-
-
 			</div>
 		</section>
 	</div>
