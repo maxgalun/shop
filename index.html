@@ -6,6 +6,17 @@
 	<title>Shop</title>
 	<link rel="stylesheet" href="common.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,800" rel="stylesheet" />
+	<script>
+
+
+	function AddToCart(){
+		let CartCounter = document.querySelector(".cart__counter").innerText;
+		CartCounter++;
+		document.querySelector(".cart__counter").innerText = CartCounter;
+	}
+
+
+	</script>
 </head>
 <body>
 	<header class="header">
@@ -64,7 +75,7 @@
 								<div class="book__picture"><img src="/img/Harry Potter.svg" alt="Гарри Поттер и философский камень">
 								</div>
 								<div class="book__title">Гарри Поттер и философский камень</div>
-								<div class="book__button button">
+								<div class="book__button button" onclick="AddToCart()">
 									<div class="button__content">
 										<div class="button__title"></div>
 									</div>

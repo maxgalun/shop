@@ -30,7 +30,7 @@ body {
 }
 
 .header__content {
-  height: 140px;
+  min-height: 140px;
 }
 
 .header__logo {
@@ -89,7 +89,7 @@ body {
 }
 
 .banner__content {
-  height: 45px;
+  min-height: 45px;
   padding-top: 13px;
 }
 
@@ -123,8 +123,8 @@ body {
   position: absolute;
   top: 0;
   right: -9px;
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   padding-top: 2px;
   border-radius: 50%;
   font-size: 24px;
@@ -176,7 +176,7 @@ body {
 }
 
 .book__title {
-  height: 83px;
+  min-height: 83px;
   text-align: center;
   color: #888;
 }
