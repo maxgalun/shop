@@ -14,7 +14,7 @@ ul {
 }
 
 body {
-  min-width: 1000px;
+  min-width: 1110px;
   font-family: Roboto, sans-serif;
 }
 
@@ -35,34 +35,38 @@ body {
 
 .header__logo {
   float: left;
-  height: 100%;
-  font-size: 48px;
-  font-weight: 700;
 }
 
 .logo__content {
-  padding-top: 37px;
+  position: relative;
+  line-height: 140px;
 }
 
 .logo__picture {
-  float: left;
-  margin-right: 41px;
-}
-
-.logo__picture img {
+  position: absolute;
+  top: 50%;
+  margin-top: -33px;
   width: 83px;
   height: 66px;
 }
 
 .logo__title {
-  float: right;
+  padding-left: 124px;
+  font-size: 48px;
+  font-weight: 700;
 }
 
 .header__menu {
   float: right;
-  padding-top: 55px;
+}
+
+.menu {
   font-size: 24px;
   font-weight: 800;
+}
+
+.menu__list {
+  line-height: 140px;
 }
 
 .menu__item {
@@ -90,7 +94,7 @@ body {
 
 .banner__content {
   height: 45px;
-  padding-top: 13px;
+  line-height: 45px;
 }
 
 .banner__sale {
@@ -101,4 +105,95 @@ body {
 .banner__buy a {
   color: #888;
   text-decoration: underline;
+}
+
+.header__cart {
+  float: right;
+}
+
+.cart__content {
+  padding-left: 64px;
+  line-height: 140px;
+}
+
+.cart__icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cart__img {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.cart__counter {
+  position: absolute;
+  top: 0;
+  right: -9px;
+  min-width: 32px;
+  border-radius: 50%;
+  line-height: 32px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #f34141;
+}
+
+.catalog__list {
+  padding-top: 87px;
+}
+
+.catalog__list-item {
+  float: left;
+  width: 50%;
+  margin-bottom: 113px;
+}
+
+.catalog__product {
+  margin: 0 auto;
+}
+
+.book {
+  max-width: 387px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.book__content {
+  padding: 38px 56px 30px;
+  border: 1px solid #888;
+  border-radius: 30px;
+}
+
+.book__picture {
+  display: block;
+  width: 153px;
+  height: 258px;
+  margin: 0 auto 19px;
+}
+
+.book__title {
+  height: 83px;
+  text-align: center;
+  color: #888;
+}
+
+.book__button {
+  visibility: hidden;
+}
+
+.button {
+  height: 62px;
+  line-height: 62px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: #888;
+  cursor: pointer;
+}
+
+.book:hover .book__button {
+  visibility: visible;
 }
