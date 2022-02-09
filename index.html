@@ -6,13 +6,6 @@
 	<title>Магазин</title>
 	<link rel="stylesheet" href="common.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,800" rel="stylesheet" />
-	<script>
-	function AddToCart(){
-		let CartCounter = document.querySelector(".cart__counter").innerText;
-		CartCounter++;
-		document.querySelector(".cart__counter").innerText = CartCounter;
-	}
-	</script>
 </head>
 <body>
 	<header class="header">
@@ -28,7 +21,7 @@
 					<div class="cart__content">
 						<div class="cart__icon">
 							<img class="cart__img" src="/img/cart.svg" alt="корзина">
-							<div class="cart__counter">0</div>
+							<div class="cart__counter"></div>
 						</div>
 					</div>
 				</div>
@@ -67,7 +60,7 @@
 							<div class="book__content">
 									<img class="book__picture" src="/img/Harry Potter.jpg" alt="Гарри Поттер и философский камень">
 								<div class="book__title">Гарри Поттер и философский камень</div>
-								<div class="book__button button" onclick="AddToCart()">В корзину</div>
+								<div class="book__button button" onclick="incrementCartCounter()">В корзину</div>
 							</div>
 						</div>
 					</li>
@@ -76,7 +69,7 @@
 							<div class="book__content">
 									<img class="book__picture" src="/img/A Man Called Ove.jpg" alt="Вторая жизнь Уве">
 								<div class="book__title">Вторая жизнь Уве</div>
-								<div class="book__button button" onclick="AddToCart()">В корзину</div>
+								<div class="book__button button" onclick="incrementCartCounter()">В корзину</div>
 							</div>
 						</div>
 					</li>
@@ -85,7 +78,7 @@
 							<div class="book__content">
 									<img class="book__picture" src="/img/Flowers for Algernon.jpg" alt="Цветы для Элджернона">
 								<div class="book__title">Цветы для Элджернона</div>
-								<div class="book__button button" onclick="AddToCart()">В корзину</div>
+								<div class="book__button button" onclick="incrementCartCounter()">В корзину</div>
 							</div>
 						</div>
 					</li>
@@ -94,7 +87,7 @@
 							<div class="book__content">
 									<img class="book__picture" src="/img/Pride and Prejudice.jpg" alt="Гордость и предубеждение">
 								<div class="book__title">Гордость и предубеждение</div>
-								<div class="book__button button" onclick="AddToCart()">В корзину</div>
+								<div class="book__button button" onclick="incrementCartCounter()">В корзину</div>
 							</div>
 						</div>
 					</li>
@@ -102,5 +95,6 @@
 		</section>
 	</div>
 </div>
+	<script src="cart.js"></script>
 </body>
 </html>
