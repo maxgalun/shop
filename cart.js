@@ -11,6 +11,6 @@ function incrementCartCounter() {
   SetlocalStorageCartCounter();
 }
 
-function SetlocalStorageCartCounter() {
+function setlocalStorageCartCounter() {
   localStorage.setItem("cartCounter", cartCounter);
 }
