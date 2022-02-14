@@ -30,47 +30,40 @@ body {
 }
 
 .header__content {
+  display: flex;
+  justify-content: space-between;
   height: 140px;
 }
 
 .header__logo {
-  float: left;
-}
-
-.logo__content {
-  position: relative;
-  line-height: 140px;
-}
-
-.logo__picture {
-  position: absolute;
-  top: 50%;
-  margin-top: -33px;
-  width: 83px;
-  height: 66px;
+  display: flex;
+  align-items: center;
 }
 
 .logo__title {
-  padding-left: 124px;
+  padding-left: 41px;
   font-size: 48px;
   font-weight: 700;
 }
 
-.header__menu {
-  float: right;
+.header__wrapper {
+  display: flex;
+  align-items: center;
 }
 
+.header__menu {
+  margin-right: 65px;
+}
 .menu {
   font-size: 24px;
   font-weight: 800;
 }
 
 .menu__list {
-  line-height: 140px;
+  display: flex;
 }
 
 .menu__item {
-  float: left;
   margin-right: 60px;
 }
 
@@ -98,7 +91,6 @@ body {
 }
 
 .banner__sale {
-  float: left;
   padding: 0 8.5% 0 24%;
 }
 
@@ -108,12 +100,9 @@ body {
 }
 
 .header__cart {
-  float: right;
 }
 
 .cart__content {
-  padding-left: 64px;
-  line-height: 140px;
 }
 
 .cart__icon {
