@@ -13,7 +13,7 @@ ul {
   list-style: none;
 }
 
-body {
+.body {
   min-width: 1110px;
   font-family: Roboto, sans-serif;
 }
@@ -40,8 +40,10 @@ body {
   align-items: center;
 }
 
+.logo__picture {
+  margin-right: 41px;
+}
 .logo__title {
-  padding-left: 41px;
   font-size: 48px;
   font-weight: 700;
 }
@@ -79,32 +81,6 @@ body {
   text-decoration: underline;
 }
 
-.banner {
-  border-bottom: 1px solid #888;
-  color: #888;
-  background-color: #fff;
-}
-
-.banner__content {
-  height: 45px;
-  line-height: 45px;
-}
-
-.banner__sale {
-  padding: 0 8.5% 0 24%;
-}
-
-.banner__buy a {
-  color: #888;
-  text-decoration: underline;
-}
-
-.header__cart {
-}
-
-.cart__content {
-}
-
 .cart__icon {
   position: relative;
   display: inline-block;
@@ -130,41 +106,63 @@ body {
   background-color: #f34141;
 }
 
+.banner {
+  border-bottom: 1px solid #888;
+  color: #888;
+  background-color: #fff;
+}
+
+.banner__content {
+  display: flex;
+  height: 45px;
+  margin-left: 318px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner__buy {
+  width: 50%;
+}
+
+.banner__buy a {
+  color: #888;
+  text-decoration: underline;
+}
 .catalog__list {
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 87px;
 }
 
 .catalog__list-item {
-  float: left;
   width: 50%;
   margin-bottom: 113px;
 }
 
-.catalog__product {
-  margin: 0 auto;
-}
-
 .book {
-  max-width: 387px;
   font-size: 24px;
   font-weight: 400;
 }
 
 .book__content {
-  padding: 38px 56px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 386px;
+  height: 500px;
   border: 1px solid #888;
   border-radius: 30px;
+  padding: 38px 56px 30px;
+  margin: 0 auto;
 }
 
 .book__picture {
-  display: block;
-  width: 153px;
-  height: 258px;
-  margin: 0 auto 19px;
+  align-self: center;
 }
 
 .book__title {
   height: 83px;
+  overflow: auto;
   text-align: center;
   color: #888;
 }
