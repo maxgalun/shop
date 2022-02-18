@@ -45,12 +45,10 @@ body {
 
 .header__logo {
   display: flex;
+  gap: 41px;
   align-items: center;
 }
 
-.logo__picture {
-  margin-right: 41px;
-}
 .logo__title {
   font-size: 48px;
   font-weight: 700;
@@ -58,12 +56,10 @@ body {
 
 .header__body {
   display: flex;
+  gap: 65px;
   align-items: center;
 }
 
-.header__menu {
-  margin-right: 65px;
-}
 .menu {
   font-size: 24px;
   font-weight: 800;
@@ -71,14 +67,7 @@ body {
 
 .menu__list {
   display: flex;
-}
-
-.menu__item {
-  margin-right: 60px;
-}
-
-.menu__item:last-child {
-  margin-right: 0px;
+  gap: 60px;
 }
 
 .menu__item a {
@@ -122,9 +111,9 @@ body {
 
 .banner__content {
   display: flex;
+  justify-content: space-between;
   height: 45px;
   margin-left: 318px;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -160,6 +149,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   max-width: 386px;
   height: 500px;
   border: 1px solid #888;
@@ -173,8 +163,8 @@ body {
 }
 
 .book__title {
-  height: 83px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-wrap: break-word;
   text-align: center;
   color: #888;
 }
@@ -184,10 +174,11 @@ body {
 }
 
 .button {
-  height: 62px;
-  line-height: 62px;
+  display: flex;
+  flex-basis: 62px;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
-  text-align: center;
   color: #fff;
   background-color: #888;
   cursor: pointer;
