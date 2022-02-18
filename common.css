@@ -13,9 +13,18 @@ ul {
   list-style: none;
 }
 
-.body {
+html,
+body {
   min-width: 1110px;
+  height: 100%;
   font-family: Roboto, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .container {
@@ -48,7 +57,7 @@ ul {
   font-weight: 700;
 }
 
-.header__wrapper {
+.header__body {
   display: flex;
   align-items: center;
 }
@@ -128,6 +137,10 @@ ul {
   color: #888;
   text-decoration: underline;
 }
+
+.main {
+  flex: 1 1 auto;
+}
 .catalog__list {
   display: flex;
   flex-wrap: wrap;
@@ -183,4 +196,13 @@ ul {
 
 .book:hover .book__button {
   visibility: visible;
+}
+
+.footer {
+  color: #fff;
+  background: #888;
+}
+
+.footer__content {
+  height: 140px;
 }
