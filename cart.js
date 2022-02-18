@@ -8,7 +8,7 @@ function updateCartCounterDOM() {
 function incrementCartCounter() {
   cartCounter++;
   updateCartCounterDOM();
-  SetlocalStorageCartCounter();
+  setlocalStorageCartCounter();
 }
 
 function setlocalStorageCartCounter() {
