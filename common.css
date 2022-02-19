@@ -34,7 +34,14 @@ body {
 
 .header {
   color: #fff;
+}
+
+.header__top {
   background: #888;
+}
+
+.header__bottom {
+  border-bottom: 1px solid #888;
 }
 
 .header__content {
@@ -51,9 +58,6 @@ body {
 .header__logo {
   display: flex;
   gap: 41px;
-}
-
-.logo__picture {
 }
 
 .logo__title {
@@ -114,7 +118,6 @@ body {
 }
 
 .banner {
-  border-bottom: 1px solid #888;
   color: #888;
   background-color: #fff;
 }
@@ -122,10 +125,11 @@ body {
 .banner__content {
   display: flex;
   gap: 10px;
+  min-height: 45px;
   justify-content: space-between;
-  height: 45px;
   margin-left: 318px;
   align-items: center;
+  padding: 10px;
 }
 
 .banner__buy {
@@ -208,11 +212,21 @@ body {
   min-height: 140px;
 }
 
+@media (max-width: 1189px) {
+  .banner__content {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .banner__buy {
+    width: auto;
+  }
+}
+
 @media (max-width: 1110px) {
   .menu__list {
     flex-direction: column;
     gap: 5px;
-    /* justify-content: center; */
     align-items: center;
   }
 }
