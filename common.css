@@ -230,6 +230,10 @@ body {
     gap: 5px;
     align-items: center;
   }
+
+  .header__cart {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 899px) {
@@ -243,22 +247,16 @@ body {
   }
 }
 
-@media (max-width: 754px) {
+@media (max-width: 699px) {
   .header__menu {
     order: 1;
   }
 
   .header__content {
-    padding: 37px 0 52px;
+    padding: 37px 0;
   }
 
   .menu__list {
     gap: 30px;
-  }
-}
-
-@media (max-width: 530px) {
-  .header__cart {
-    padding-left: 0;
   }
 }
