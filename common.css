@@ -247,7 +247,7 @@ body {
   }
 }
 
-@media (max-width: 699px) {
+@media (max-width: 716px) {
   .header__menu {
     order: 1;
   }
