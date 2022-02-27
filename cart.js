@@ -20,13 +20,10 @@ async function GetCatalog() {
   let response = await fetch(
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
-  if (response.ok) {
-    let json = await response.json();
-    const catalogList = document.querySelector(".catalog__list");
-    catalogList.append(...createNodeArrayCatalogLI(json));
-  } else {
-    console.log("Ошибка HTTP: " + response.status);
-  }
+  let json = await response.json();
+  let NodeArrayCatalogLI = createNodeArrayCatalogLI(json);
+  const catalogList = document.querySelector(".catalog__list");
+  catalogList.append(...NodeArrayCatalogLI);
 }
 
 function createNodeArrayCatalogLI(json) {
