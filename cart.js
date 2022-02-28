@@ -21,9 +21,8 @@ async function GetCatalog() {
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
   let json = await response.json();
-  let NodeArrayCatalogLI = createNodeArrayCatalogLI(json);
   const catalogList = document.querySelector(".catalog__list");
-  catalogList.append(...NodeArrayCatalogLI);
+  catalogList.append(...createNodeArrayCatalogLI(json));
 }
 
 function createNodeArrayCatalogLI(json) {
