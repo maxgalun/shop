@@ -1,6 +1,6 @@
 let cartCounter = localStorage.getItem("cartCounter");
 updateCartCounterDOM();
-GetCatalog();
+getCatalog();
 
 function updateCartCounterDOM() {
   document.querySelector(".cart__counter").innerText = cartCounter;
@@ -16,7 +16,7 @@ function setlocalStorageCartCounter() {
   localStorage.setItem("cartCounter", cartCounter);
 }
 
-async function GetCatalog() {
+async function getCatalog() {
   let response = await fetch(
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
