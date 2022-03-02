@@ -40,10 +40,6 @@ function createNodeArrayCatalogLI(json) {
 }
 
 function createNodeCatalogLI() {
-  const bookPictureWidth = "153";
-  const bookPictureHeight = "258";
-  const bookButtonText = "В корзину";
-  const bookButtonOnClick = incrementCartCounter;
   const book = document.createElement("li");
   const bookContent = document.createElement("div");
   const bookPicture = document.createElement("img");
@@ -54,10 +50,10 @@ function createNodeCatalogLI() {
   bookPicture.classList.add("book__picture");
   bookTitle.classList.add("book__title");
   bookButton.classList.add("book__button", "button");
-  bookPicture.width = bookPictureWidth;
-  bookPicture.height = bookPictureHeight;
-  bookButton.innerText = bookButtonText;
-  bookButton.onclick = bookButtonOnClick;
+  bookPicture.width = "153";
+  bookPicture.height = "258";
+  bookButton.innerText = "В корзину";
+  bookButton.onclick = incrementCartCounter;
   bookContent.append(bookPicture);
   bookContent.append(bookTitle);
   bookContent.append(bookButton);
