@@ -20,7 +20,7 @@ async function getCatalog() {
   const response = await fetch(
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
-  let json = await response.json();
+  const json = await response.json();
   const catalogList = document.querySelector(".catalog__list");
   catalogList.append(...createNodeArrayCatalogLI(json));
 }
