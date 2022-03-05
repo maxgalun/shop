@@ -1,7 +1,6 @@
-let catalogObjects;
+let catalog;
 getCatalog();
 let cart = JSON.parse(localStorage.getItem("cart"));
-
 updateCartCounterDOM();
 
 function updateCartCounterDOM() {
@@ -21,7 +20,7 @@ function setLocalStorageCart() {
 }
 
 function updateCart(goodsId) {
-  catalogObjects.forEach((element) => {
+  catalog.forEach((element) => {
     if (element.id == goodsId) {
       if (!cart) {
         cart = [];
@@ -35,34 +34,34 @@ async function getCatalog() {
   const response = await fetch(
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
-  catalogObjects = await response.json();
+  catalog = await response.json();
   const catalogList = document.querySelector(".catalog__list");
-  catalogList.append(...createNodeArrayCatalogLI(catalogObjects));
+  catalogList.append(...createNodeArrayCatalogLI(catalog));
 }
 
-function createNodeArrayCatalogLI(catalogObjects) {
-  let catalog = [];
-  for (let i = 0; i < catalogObjects.length; i++) {
-    let book = createNodeCatalogLI();
-    const bookPicture = book.querySelector(".book__picture");
-    const bookTitle = book.querySelector(".book__title");
-    const bookButton = book.querySelector(".book__button");
-    bookPicture.alt = catalogObjects[i].title;
-    bookPicture.src = catalogObjects[i].image;
-    bookTitle.innerText = catalogObjects[i].title;
-    bookButton.id = catalogObjects[i].id;
-    catalog.push(book);
+function createNodeArrayCatalogLI(catalog) {
+  let nodeArrayCatalogLI = [];
+  for (let i = 0; i < catalog.length; i++) {
+    let nodeCatalogLI = createNodeCatalogLI();
+    const bookPicture = nodeCatalogLI.querySelector(".book__picture");
+    const bookTitle = nodeCatalogLI.querySelector(".book__title");
+    const bookButton = nodeCatalogLI.querySelector(".book__button");
+    bookPicture.alt = catalog[i].title;
+    bookPicture.src = catalog[i].image;
+    bookTitle.innerText = catalog[i].title;
+    bookButton.id = catalog[i].id;
+    nodeArrayCatalogLI.push(nodeCatalogLI);
   }
-  return catalog;
+  return nodeArrayCatalogLI;
 }
 
 function createNodeCatalogLI() {
-  const book = document.createElement("li");
+  const nodeCatalogLI = document.createElement("li");
   const bookContent = document.createElement("div");
   const bookPicture = document.createElement("img");
   const bookTitle = document.createElement("div");
   const bookButton = document.createElement("div");
-  book.classList.add("catalog__list-item", "book");
+  nodeCatalogLI.classList.add("catalog__list-item", "book");
   bookContent.classList.add("book__content");
   bookPicture.classList.add("book__picture");
   bookTitle.classList.add("book__title");
@@ -74,6 +73,6 @@ function createNodeCatalogLI() {
   bookContent.append(bookPicture);
   bookContent.append(bookTitle);
   bookContent.append(bookButton);
-  book.append(bookContent);
-  return book;
+  nodeCatalogLI.append(bookContent);
+  return nodeCatalogLI;
 }
