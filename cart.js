@@ -1,39 +1,56 @@
-let cartCounter = localStorage.getItem("cartCounter");
-updateCartCounterDOM();
+let catalogObjects;
 getCatalog();
+let cart = JSON.parse(localStorage.getItem("cart"));
+
+updateCartCounterDOM();
 
 function updateCartCounterDOM() {
-  document.querySelector(".cart__counter").innerText = cartCounter;
+  if (cart) {
+    document.querySelector(".cart__counter").innerText = cart.length;
+  }
 }
 
-function incrementCartCounter() {
-  cartCounter++;
+function addGoodsItemtoCart(event) {
+  updateCart(event.target.id);
   updateCartCounterDOM();
-  setlocalStorageCartCounter();
+  setLocalStorageCart();
 }
 
-function setlocalStorageCartCounter() {
-  localStorage.setItem("cartCounter", cartCounter);
+function setLocalStorageCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCart(goodsId) {
+  catalogObjects.forEach((element) => {
+    if (element.id == goodsId) {
+      if (!cart) {
+        cart = [];
+      }
+      cart.push(element);
+    }
+  });
 }
 
 async function getCatalog() {
   const response = await fetch(
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
-  const json = await response.json();
+  catalogObjects = await response.json();
   const catalogList = document.querySelector(".catalog__list");
-  catalogList.append(...createNodeArrayCatalogLI(json));
+  catalogList.append(...createNodeArrayCatalogLI(catalogObjects));
 }
 
-function createNodeArrayCatalogLI(json) {
+function createNodeArrayCatalogLI(catalogObjects) {
   let catalog = [];
-  for (let i = 0; i < json.length; i++) {
+  for (let i = 0; i < catalogObjects.length; i++) {
     let book = createNodeCatalogLI();
     const bookPicture = book.querySelector(".book__picture");
     const bookTitle = book.querySelector(".book__title");
-    bookPicture.alt = json[i].title;
-    bookPicture.src = json[i].image;
-    bookTitle.innerText = json[i].title;
+    const bookButton = book.querySelector(".book__button");
+    bookPicture.alt = catalogObjects[i].title;
+    bookPicture.src = catalogObjects[i].image;
+    bookTitle.innerText = catalogObjects[i].title;
+    bookButton.id = catalogObjects[i].id;
     catalog.push(book);
   }
   return catalog;
@@ -53,7 +70,7 @@ function createNodeCatalogLI() {
   bookPicture.width = "153";
   bookPicture.height = "258";
   bookButton.innerText = "В корзину";
-  bookButton.onclick = incrementCartCounter;
+  bookButton.onclick = addGoodsItemtoCart;
   bookContent.append(bookPicture);
   bookContent.append(bookTitle);
   bookContent.append(bookButton);
