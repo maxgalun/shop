@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Магазин</title>
+    <title>Корзина</title>
     <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="cart.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:400,700,800"
       rel="stylesheet"
@@ -65,8 +66,48 @@
       </header>
       <div class="main">
         <div class="container">
-          <section class="catalog">
-            <ul class="catalog__list"></ul>
+          <section class="page">
+            <div class="page__title">
+              <h2>Корзина</h2>
+            </div>
+
+            <div class="page__breadcrumbs">Главная / корзина</div>
+          </section>
+          <section class="cart">
+            <ul class="cart__list">
+              <li class="cart__list-item goods">
+                <div class="goods__content">
+                  <img
+                    class="goods__picture"
+                    width="153"
+                    height="258"
+                    alt="Гарри Поттер и философский камень"
+                    src="https://raw.githubusercontent.com/VitaliyPolyashov/classes/master/shop-data/1.jpg"
+                  />
+                  <div class="goods__title">
+                    Гарри Поттер и философский камень
+                  </div>
+                  <div class="goods__counter counter">
+                    <button class="counter__rate">–</button>
+                    <span class="counter__value">2</span>
+                    <button class="counter__rate">+</button>
+                  </div>
+                  <button
+                    class="goods__delete-button"
+                    type="button"
+                    name="delete goods"
+                  >
+                    <img
+                      class="goods__delete-icon"
+                      src="img/delete-button.svg"
+                      alt="иконка удалить товар"
+                      width="32"
+                      height="32"
+                    />
+                  </button>
+                </div>
+              </li>
+            </ul>
           </section>
         </div>
       </div>
@@ -77,6 +118,6 @@
       </footer>
     </div>
     <script src="common.js"></script>
-    <script src="index.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>
