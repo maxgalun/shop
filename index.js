@@ -1,15 +1,15 @@
-fillCatalog();
-fillCart();
+getCart();
+createCatalogList();
 
-async function fillCatalog() {
+async function createCatalogList() {
   const response = await fetch(
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
-  catalog = await response.json();
-  createNodeArrayCatalogListItem();
+  let catalog = await response.json();
+  createNodeArrayCatalogListItem(catalog);
 }
 
-function createNodeArrayCatalogListItem() {
+function createNodeArrayCatalogListItem(catalog) {
   let nodeArrayCatalogListItem = [];
   const catalogList = document.querySelector(".catalog__list");
   for (let i = 0; i < catalog.length; i++) {
@@ -20,7 +20,8 @@ function createNodeArrayCatalogListItem() {
     bookPicture.alt = catalog[i].title;
     bookPicture.src = catalog[i].image;
     bookTitle.innerText = catalog[i].title;
-    bookButton.id = catalog[i].id;
+    nodeCatalogListItem.dataset.catalogId = catalog[i].id;
+    new CatalogItem(nodeCatalogListItem);
     nodeArrayCatalogListItem.push(nodeCatalogListItem);
   }
   catalogList.append(...nodeArrayCatalogListItem);
@@ -40,27 +41,8 @@ function createNodeCatalogListItem() {
   bookPicture.width = "153";
   bookPicture.height = "258";
   bookButton.innerText = "В корзину";
-  bookButton.onclick = addGoodsItemtoCart;
-  bookContent.append(bookPicture);
-  bookContent.append(bookTitle);
-  bookContent.append(bookButton);
+  bookButton.dataset.action = "incrementItem";
+  bookContent.append(bookPicture, bookTitle, bookButton);
   nodeCatalogListItem.append(bookContent);
   return nodeCatalogListItem;
-}
-
-function addGoodsItemtoCart(event) {
-  updateCart(event.target.id);
-  updateCartCounterDOM();
-  setLocalStorageCart();
-}
-
-function setLocalStorageCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-function updateCart(goodsId) {
-  if (!cart) {
-    cart = [];
-  }
-  cart.push(goodsId);
 }

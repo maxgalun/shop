@@ -22,6 +22,10 @@ button {
   cursor: pointer;
 }
 
+input[type="text"] {
+  font: inherit;
+}
+
 body {
   min-width: 487px;
   height: 100vh;
