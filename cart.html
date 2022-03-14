@@ -68,51 +68,26 @@
       <div class="main">
         <div class="container">
           <section class="page">
-            <div class="page__title">
-              <h2>Корзина</h2>
-            </div>
-
-            <div class="page__breadcrumbs">Главная / корзина</div>
+            <h2 class="page__title">Корзина</h2>
+            <ul class="page__breadcrumbs breadcrumbs">
+              <li>
+                <a class="breadcrumbs__parents" href="index.html">Главная</a>
+              </li>
+              <li><span class="breadcrumbs__current">Корзина</span></li>
+            </ul>
           </section>
           <section class="cart">
             <ul class="cart__list">
-              <li class="cart__list-item empty-cart">Корзина пуста</li>
-              <!-- <li class="cart__list-item goods">
-                <div class="goods__content">
-                  <img
-                    class="goods__picture"
-                    width="153"
-                    height="258"
-                    alt="Гарри Поттер и философский камень"
-                    src="https://raw.githubusercontent.com/VitaliyPolyashov/classes/master/shop-data/1.jpg"
-                  />
-                  <div class="goods__title">
-                    Гарри Поттер и философский камень
-                  </div>
-                  <div class="goods__amount amount">
-                    <button class="amount__rate amount__rate--increment">
-                      –
-                    </button>
-                    <span class="amount__value">2</span>
-                    <button class="amount__rate amount__rate--decrement">
-                      +
-                    </button>
-                  </div>
-                  <button
-                    class="goods__delete-button"
-                    type="button"
-                    name="удалить товар"
-                  >
-                    <img
-                      class="goods__delete-icon"
-                      src="img/delete-button.svg"
-                      alt="мусорная корзина"
-                      width="30"
-                      height="30"
-                    />
-                  </button>
-                </div>
-              </li> -->
+              <li class="cart__list-item empty-cart empty-cart--show">
+                <div class="empty-cart__title">Корзина пуста</div>
+                <button
+                  name="toByeButton"
+                  type="button"
+                  class="empty-cart__button"
+                >
+                  <a href="index.html"> Перейти к покупкам </a>
+                </button>
+              </li>
             </ul>
           </section>
         </div>

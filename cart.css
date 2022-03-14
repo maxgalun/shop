@@ -1,11 +1,3 @@
-.page__title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.page__breadcrumbs {
-}
-
 .cart__list {
   display: flex;
   flex-wrap: wrap;
@@ -66,12 +58,25 @@
 }
 
 .empty-cart {
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
   display: none;
 }
 
+.empty-cart__title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.empty-cart__button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #888;
+}
+
 .empty-cart--show {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }

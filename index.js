@@ -37,9 +37,11 @@ function createNodeCatalogListItem() {
   bookContent.classList.add("book__content");
   bookPicture.classList.add("book__picture");
   bookTitle.classList.add("book__title");
-  bookButton.classList.add("book__button", "button");
+  bookButton.classList.add("book__button");
   bookPicture.width = "153";
   bookPicture.height = "258";
+  bookButton.type = "button";
+  bookButton.name = "addToCartButton";
   bookButton.innerText = "В корзину";
   bookButton.dataset.action = "incrementAmountCounter";
   bookContent.append(bookPicture, bookTitle, bookButton);
