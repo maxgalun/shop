@@ -7,9 +7,12 @@ function getCart() {
 }
 
 function updateCartCounterDOM() {
-  if (cart.length) {
-    document.querySelector(".cart__counter").innerText = cart.length;
+  const cartCounter = document.querySelector(".cart__counter");
+  if (cart.length == 0) {
+    cartCounter.innerText = null;
+    return;
   }
+  cartCounter.innerText = cart.length;
 }
 
 function setLocalStorageCart() {
@@ -20,15 +23,13 @@ class CatalogItem {
   constructor(element) {
     this.element = element;
     this.amountCounterValue = element.querySelector(
-      'form[name="amountCounter"]'
-    ).elements.amountCounterValue;
-    console.log(this.amountCounter);
+      "input[name = amountCounterValue]"
+    );
     this.element.onclick = this.onClickHandler.bind(this);
   }
 
   onClickHandler(event) {
     let action = event.target.dataset.action;
-
     if (action) {
       this[action](event);
     }
@@ -39,6 +40,7 @@ class CatalogItem {
       if (this.amountCounterValue.value > 1) {
         this.amountCounterValue.value--;
         cart.splice(cart.lastIndexOf(event.currentTarget.dataset.catalogId), 1);
+
         setLocalStorageCart();
         updateCartCounterDOM();
       }
@@ -47,6 +49,7 @@ class CatalogItem {
   incrementAmountCounter(event) {
     cart.push(event.currentTarget.dataset.catalogId);
     if (this.amountCounterValue) this.amountCounterValue.value++;
+
     setLocalStorageCart();
     updateCartCounterDOM();
   }
@@ -57,6 +60,7 @@ class CatalogItem {
       while (cart.lastIndexOf(event.currentTarget.dataset.catalogId) > -1) {
         cart.splice(cart.lastIndexOf(event.currentTarget.dataset.catalogId), 1);
       }
+      checkCartIsEmpty();
 
       setLocalStorageCart();
       updateCartCounterDOM();

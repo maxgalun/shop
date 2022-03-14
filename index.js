@@ -41,7 +41,7 @@ function createNodeCatalogListItem() {
   bookPicture.width = "153";
   bookPicture.height = "258";
   bookButton.innerText = "В корзину";
-  bookButton.dataset.action = "incrementItem";
+  bookButton.dataset.action = "incrementAmountCounter";
   bookContent.append(bookPicture, bookTitle, bookButton);
   nodeCatalogListItem.append(bookContent);
   return nodeCatalogListItem;

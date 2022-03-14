@@ -1,5 +1,6 @@
 getCart();
 createGoodsCatalogList();
+checkCartIsEmpty();
 
 async function createGoodsCatalogList() {
   let goods = cartTransform();
@@ -45,6 +46,9 @@ function createNodeArrayCartListItem(goods, catalog) {
     new CatalogItem(nodeCartListItem);
     nodeArrayCartListItem.push(nodeCartListItem);
   }
+  if (nodeArrayCartListItem.length == 0)
+    nodeArrayCartListItem.push(createNodeEmptyCart());
+
   cartList.append(...nodeArrayCartListItem);
 }
 
@@ -54,9 +58,7 @@ function createNodeCartListItem() {
   const goodsPicture = document.createElement("img");
   const goodsTitle = document.createElement("div");
   const goodsAmount = document.createElement("div");
-  const amountContent = document.createElement("form");
-  amountContent.name = "amountCounter";
-  amountContent.action = "#";
+  const amountContent = document.createElement("div");
   const amountIncrement = document.createElement("button");
   const amountCounterValue = document.createElement("input");
   amountCounterValue.type = "text";
@@ -95,6 +97,20 @@ function createNodeCartListItem() {
   goodsAmount.append(amountContent);
   goodsContent.append(goodsPicture, goodsTitle, goodsAmount, goodsDeleteButton);
   nodeCartListItem.append(goodsContent);
-  //   new CatalogItem(nodeCartListItem);
   return nodeCartListItem;
+}
+
+function createNodeEmptyCart() {
+  const nodeEmptyCart = document.createElement("li");
+  nodeEmptyCart.classList.add("cart__list-item", "empty-cart");
+  nodeEmptyCart.innerHTML = "Корзина пуста";
+  return nodeEmptyCart;
+}
+
+function checkCartIsEmpty() {
+  if (cart.length == 0) {
+    document.querySelector(".empty-cart").classList.add("empty-cart--show");
+  } else {
+    document.querySelector(".empty-cart").classList.remove("empty-cart--show");
+  }
 }
