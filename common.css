@@ -49,6 +49,9 @@ body {
   padding: 0 40px;
 }
 
+.page {
+  padding-top: 10px;
+}
 .page__title {
   font-size: 36px;
   font-weight: bold;
@@ -242,7 +245,8 @@ body {
   .banner__content {
     flex-direction: column;
     margin-left: 0;
-    padding: 15px 0;
+    text-align: center;
+    padding: 15px 10px;
   }
 
   .banner__buy {
@@ -273,7 +277,7 @@ body {
   }
 }
 
-@media (max-width: 716px) {
+@media (max-width: 699px) {
   .header__menu {
     order: 1;
   }

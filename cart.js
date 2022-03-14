@@ -66,7 +66,7 @@ function createNodeCartListItem() {
   amountCounterValue.name = "amountCounterValue";
   const amountDecrement = document.createElement("button");
   const goodsDeleteButton = document.createElement("button");
-  const goodsDeleteIcon = document.createElement("img");
+  //   const goodsDeleteIcon = document.createElement("img");
   nodeCartListItem.classList.add("cart__list-item", "goods");
   goodsContent.classList.add("goods__content");
   goodsPicture.classList.add("goods__picture");
@@ -78,8 +78,11 @@ function createNodeCartListItem() {
   amountCounterValue.classList.add("amount-counter__value");
   amountIncrement.classList.add("amount-counter__control");
   amountIncrement.dataset.action = "incrementAmountCounter";
-  goodsDeleteButton.classList.add("goods__delete-button");
-  goodsDeleteIcon.classList.add("goods__delete-icon");
+  goodsDeleteButton.classList.add(
+    "amount-counter__control",
+    "goods__delete-button"
+  );
+  //   goodsDeleteIcon.classList.add("goods__delete-icon");
   goodsPicture.width = "153";
   goodsPicture.height = "258";
   amountDecrement.innerText = "–";
@@ -87,15 +90,18 @@ function createNodeCartListItem() {
   goodsDeleteButton.type = "button";
   goodsDeleteButton.name = "удалить товар";
   goodsDeleteButton.dataset.action = "removeItem";
-  goodsDeleteIcon.width = "30";
-  goodsDeleteIcon.height = "30";
-  goodsDeleteIcon.src = "img/delete-button.svg";
-  goodsDeleteIcon.alt = "мусорная корзина";
-  goodsDeleteIcon.dataset.action = "removeItem";
-  goodsDeleteButton.append(goodsDeleteIcon);
+  goodsDeleteButton.innerText = "×";
+  //   goodsDeleteIcon.width = "30";
+  //   goodsDeleteIcon.height = "30";
+  //   goodsDeleteIcon.src = "img/delete-button.svg";
+  //   goodsDeleteIcon.alt = "мусорная корзина";
+  //   goodsDeleteIcon.dataset.action = "removeItem";
+  //   goodsDeleteButton.append(goodsDeleteIcon);
   amountContent.append(amountDecrement, amountCounterValue, amountIncrement);
   goodsAmount.append(amountContent);
+
   goodsContent.append(goodsPicture, goodsTitle, goodsAmount, goodsDeleteButton);
+
   nodeCartListItem.append(goodsContent);
   return nodeCartListItem;
 }
