@@ -37,7 +37,6 @@
 }
 
 .amount-counter__content {
-  /* margin-right: 30px; */
   display: flex;
 }
 
@@ -56,10 +55,6 @@
   position: absolute;
   top: 30px;
   right: 40px;
-}
-
-.goods__delete-icon {
-  display: block;
 }
 
 .empty-cart {
