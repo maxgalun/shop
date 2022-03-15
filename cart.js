@@ -46,9 +46,6 @@ function createNodeArrayCartListItem(goods, catalog) {
     new CatalogItem(nodeCartListItem);
     nodeArrayCartListItem.push(nodeCartListItem);
   }
-  if (nodeArrayCartListItem.length == 0)
-    nodeArrayCartListItem.push(createNodeEmptyCart());
-
   cartList.append(...nodeArrayCartListItem);
 }
 
@@ -94,13 +91,6 @@ function createNodeCartListItem() {
   goodsContent.append(goodsPicture, goodsTitle, goodsAmount, goodsDeleteButton);
   nodeCartListItem.append(goodsContent);
   return nodeCartListItem;
-}
-
-function createNodeEmptyCart() {
-  const nodeEmptyCart = document.createElement("li");
-  nodeEmptyCart.classList.add("cart__list-item", "empty-cart");
-  nodeEmptyCart.innerHTML = "Корзина пуста";
-  return nodeEmptyCart;
 }
 
 function checkCartIsEmpty() {
