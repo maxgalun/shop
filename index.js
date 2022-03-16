@@ -1,4 +1,4 @@
-getCart();
+const cart = new Cart(document.querySelector(".cart"));
 createCatalogList();
 
 async function createCatalogList() {

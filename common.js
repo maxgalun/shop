@@ -1,23 +1,49 @@
-let cart;
+window.addEventListener("storage", (event) => {
+  location.reload();
+});
 
-function getCart() {
-  cart = JSON.parse(localStorage.getItem("cart"));
-  if (!cart) cart = [];
-  updateCartCounterDOM();
-}
+let eventMixin = {
+  /**
+   * Подписаться на событие, использование:
+   * menu.on('select', function(item) { ... }
+   */
+  on(eventName, handler) {
+    if (!this._eventHandlers) this._eventHandlers = {};
+    if (!this._eventHandlers[eventName]) {
+      this._eventHandlers[eventName] = [];
+    }
+    this._eventHandlers[eventName].push(handler);
+  },
 
-function updateCartCounterDOM() {
-  const cartCounter = document.querySelector(".cart__counter");
-  if (cart.length == 0) {
-    cartCounter.innerText = null;
-    return;
-  }
-  cartCounter.innerText = cart.length;
-}
+  /**
+   * Отменить подписку, использование:
+   * menu.off('select', handler)
+   */
+  off(eventName, handler) {
+    let handlers = this._eventHandlers && this._eventHandlers[eventName];
+    if (!handlers) return;
+    for (let i = 0; i < handlers.length; i++) {
+      if (handlers[i] === handler) {
+        handlers.splice(i--, 1);
+      }
+    }
+  },
 
-function setLocalStorageCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
+  /**
+   * Сгенерировать событие с указанным именем и данными
+   * this.trigger('select', data1, data2);
+   */
+  trigger(eventName, ...args) {
+    if (!this._eventHandlers || !this._eventHandlers[eventName]) {
+      return; // обработчиков для этого события нет
+    }
+
+    // вызовем обработчики
+    this._eventHandlers[eventName].forEach((handler) =>
+      handler.apply(this, args)
+    );
+  },
+};
 
 class CatalogItem {
   constructor(element) {
@@ -25,7 +51,16 @@ class CatalogItem {
     this.amountCounterValue = element.querySelector(
       "input[name = amountCounterValue]"
     );
-    this.element.onclick = this.onClickHandler.bind(this);
+    this.on("updateCart", () => {
+      cart.updateCartCounterDOM();
+      cart.setLocalStorageCart();
+    });
+
+    this.on("emptyCart", () => {
+      cart.checkCartIsEmpty();
+    });
+
+    element.onclick = this.onClickHandler.bind(this);
   }
 
   onClickHandler(event) {
@@ -39,31 +74,76 @@ class CatalogItem {
     if (this.amountCounterValue)
       if (this.amountCounterValue.value > 1) {
         this.amountCounterValue.value--;
-        cart.splice(cart.lastIndexOf(event.currentTarget.dataset.catalogId), 1);
-
-        setLocalStorageCart();
-        updateCartCounterDOM();
+        cart.cartArray.splice(
+          cart.cartArray.lastIndexOf(event.currentTarget.dataset.catalogId),
+          1
+        );
+        this.updateCart();
       }
   }
 
   incrementAmountCounter(event) {
-    cart.push(event.currentTarget.dataset.catalogId);
+    cart.cartArray.push(event.currentTarget.dataset.catalogId);
     if (this.amountCounterValue) this.amountCounterValue.value++;
-
-    setLocalStorageCart();
-    updateCartCounterDOM();
+    this.updateCart();
   }
 
   removeItem(event) {
     if (confirm("Удалить товар из корзины?")) {
       this.element.remove();
-      while (cart.lastIndexOf(event.currentTarget.dataset.catalogId) > -1) {
-        cart.splice(cart.lastIndexOf(event.currentTarget.dataset.catalogId), 1);
+      while (
+        cart.cartArray.lastIndexOf(event.currentTarget.dataset.catalogId) > -1
+      ) {
+        cart.cartArray.splice(
+          cart.cartArray.lastIndexOf(event.currentTarget.dataset.catalogId),
+          1
+        );
       }
-      checkCartIsEmpty();
+      this.updateCart();
+      this.emptyCart();
+    }
+  }
 
-      setLocalStorageCart();
-      updateCartCounterDOM();
+  updateCart() {
+    this.trigger("updateCart");
+  }
+
+  emptyCart() {
+    this.trigger("emptyCart");
+  }
+}
+
+class Cart {
+  constructor(element) {
+    this.element = element;
+    this.cartCounter = element.querySelector(".cart__counter");
+    this.cartArray = JSON.parse(localStorage.getItem("cart"));
+    if (!this.cartArray) this.cartArray = [];
+    this.updateCartCounterDOM();
+  }
+
+  updateCartCounterDOM() {
+    if (this.cartArray.length == 0) {
+      this.cartCounter.innerText = null;
+      return;
+    }
+    this.cartCounter.innerText = this.cartArray.length;
+  }
+
+  setLocalStorageCart() {
+    localStorage.setItem("cart", JSON.stringify(this.cartArray));
+  }
+
+  checkCartIsEmpty() {
+    if (this.cartArray.length == 0) {
+      document.querySelector(".empty-cart").classList.add("empty-cart--show");
+    } else {
+      document
+        .querySelector(".empty-cart")
+        .classList.remove("empty-cart--show");
     }
   }
 }
+
+Object.assign(CatalogItem.prototype, eventMixin);
+Object.assign(Cart.prototype, eventMixin);

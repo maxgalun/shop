@@ -1,9 +1,9 @@
-getCart();
+const cart = new Cart(document.querySelector(".cart"));
 createGoodsCatalogList();
-checkCartIsEmpty();
 
 async function createGoodsCatalogList() {
   let goods = cartTransform();
+  console.log(goods);
   const response = await fetch(
     "https://raw.githubusercontent.com/maxgalun/classes/master/shop-data/data.json"
   );
@@ -13,13 +13,13 @@ async function createGoodsCatalogList() {
 
 function cartTransform() {
   let result = [];
-  for (let i = 0; i < cart.length; i++) {
-    let index = result.findIndex((item) => item.id == cart[i]);
+  for (let i = 0; i < cart.cartArray.length; i++) {
+    let index = result.findIndex((item) => item.id == cart.cartArray[i]);
     if (index > -1) {
       result[index].amount++;
     } else {
       let item = {};
-      item.id = cart[i];
+      item.id = cart.cartArray[i];
       item.amount = 1;
       result.push(item);
     }
@@ -91,12 +91,4 @@ function createNodeCartListItem() {
   goodsContent.append(goodsPicture, goodsTitle, goodsAmount, goodsDeleteButton);
   nodeCartListItem.append(goodsContent);
   return nodeCartListItem;
-}
-
-function checkCartIsEmpty() {
-  if (cart.length == 0) {
-    document.querySelector(".empty-cart").classList.add("empty-cart--show");
-  } else {
-    document.querySelector(".empty-cart").classList.remove("empty-cart--show");
-  }
 }
